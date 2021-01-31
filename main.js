@@ -36,11 +36,19 @@ document.getElementById('submit_btn').addEventListener('click', function () {
     const generateValue = document.getElementById('generateBox').value;
    
     if (inputNumber == generateValue) {
-        document.getElementById('notify_fail').style.display = 'none';
-        document.getElementById('notify_success').style.display = 'block';
+        notify(success);
+        hide(fail);
     } else {
         document.getElementById('notify_success').style.display = 'none';
-        document.getElementById('notify_fail').style.display = 'block';
+        notify(fail);
+        hide(success);
     }
   
 })
+
+function notify(showElement) {
+    document.getElementById('notify_' + showElement).style.display = 'block';
+}
+function hide(hideElement) {
+        document.getElementById('notify_' + hideElement).style.display = 'none';
+}
