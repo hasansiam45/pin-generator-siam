@@ -39,7 +39,6 @@ document.getElementById('submit_btn').addEventListener('click', function () {
         notify(success);
         hide(fail);
     } else {
-        document.getElementById('notify_success').style.display = 'none';
         notify(fail);
         hide(success);
     }
