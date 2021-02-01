@@ -34,20 +34,22 @@ document.getElementById('submit_btn').addEventListener('click', function () {
     const inputValue = document.getElementById('type_box').value;
     const inputNumber = parseInt(inputValue);
     const generateValue = document.getElementById('generateBox').value;
-   
-    if (inputNumber == generateValue) {
-        notify(success);
-        hide(fail);
-    } else {
-        notify(fail);
-        hide(success);
-    }
-  
-})
 
-function notify(showElement) {
-    document.getElementById('notify_' + showElement).style.display = 'block';
+    if (inputNumber == generateValue) {
+        notify('success');
+        hide('fail');
+
+    } else {
+        notify('fail');
+        hide('success');
+    }
+
+});
+
+function notify(element) {
+    document.getElementById('notify_' + element).style.display = 'block';
 }
-function hide(hideElement) {
-        document.getElementById('notify_' + hideElement).style.display = 'none';
+
+function hide(element) {
+    document.getElementById('notify_' + element).style.display = 'none';
 }
